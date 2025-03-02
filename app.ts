@@ -55,7 +55,7 @@ app.get('/', c => {
   return c.html(html.text())
 })
 
-const secret = 'LHOUwjBFGyori7tltMnRQ2YtanvObPZOenCowk/Cq8c='
+const secret = 'LHOUwjBFGyori4tltMnRQ2YtanvObPZOenCowk/Cq8c='
 
 app.post('/github-push-event', async c => {
   const githubEvent = c.req.header('X-GitHub-Event')
@@ -83,8 +83,8 @@ app.post('/github-push-event', async c => {
 
 function runBuildProcess(): void {
   exec(
-    'git pull && bun run build && sudo systemctl restart mbdpartner.service',
-    { cwd: '/root/mbdpartner' },
+    'git pull && bun run build && sudo systemctl restart partner-mbd.service',
+    { cwd: '/root/partner-mbd' },
     (error: Error | null, stdout: string, stderr: string) => {
       if (error) {
         console.error(`Exec error: ${error}`)
