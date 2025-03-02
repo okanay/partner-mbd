@@ -58,32 +58,51 @@ app.get('/', c => {
 const secret = 'LHOUwjBFGyori4tltMnRQ2YtanvObPZOenCowk/Cq8c='
 
 app.post('/github-push-event', async c => {
+  console.log('Webhook received!')
   const githubEvent = c.req.header('X-GitHub-Event')
   const signature = c.req.header('X-Hub-Signature-256')
 
+  console.log(`GitHub Event: ${githubEvent}`)
+  console.log(`Signature: ${signature}`)
+
   if (githubEvent !== 'push' || !signature) {
+    console.log('Invalid event or missing signature')
     return c.json({ error: 'Invalid event or missing signature' }, 400)
   }
 
   const payload = await c.req.text()
+  console.log(`Payload received: ${payload.substring(0, 200)}...`) // İlk 200 karakteri göster
+
   const hmac = crypto.createHmac('sha256', secret)
   hmac.update(payload)
   const expectedSignature = `sha256=${hmac.digest('hex')}`
 
+  console.log(`Expected Signature: ${expectedSignature}`)
+  console.log(`Signatures match: ${signature === expectedSignature}`)
+
   if (signature !== expectedSignature) {
+    console.log('Signature validation failed')
     return c.json({ error: 'Invalid signature' }, 401)
   }
+
+  console.log('Webhook validated successfully, running build process...')
 
   c.status(200)
   setImmediate(() => {
     runBuildProcess()
   })
+
   return c.body(null)
 })
 
 function runBuildProcess(): void {
+  console.log('Starting build process...')
+  const command =
+    'git pull && bun run build && sudo systemctl restart partner-mbd.service'
+  console.log(`Executing command: ${command}`)
+
   exec(
-    'git pull && bun run build && sudo systemctl restart partner-mbd.service',
+    command,
     { cwd: '/root/partner-mbd' },
     (error: Error | null, stdout: string, stderr: string) => {
       if (error) {
@@ -92,6 +111,7 @@ function runBuildProcess(): void {
         return
       }
       console.log(`Command output: ${stdout}`)
+      console.log('Build process completed successfully')
     },
   )
 }
