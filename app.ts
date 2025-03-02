@@ -98,7 +98,7 @@ app.post('/github-push-event', async c => {
 function runBuildProcess(): void {
   console.log('Starting build process...')
   const command =
-    'git pull && bun run build && sudo systemctl restart partner-mbd.service'
+    '/usr/bin/git pull && /root/.nvm/versions/node/v22.11.0/bin/bun run build && sudo systemctl restart partner-mbd.service'
   console.log(`Executing command: ${command}`)
 
   exec(
