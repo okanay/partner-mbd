@@ -263,7 +263,7 @@
               </svg>
             </div>
             <div class="flex flex-col">
-              <span class="font-medium text-gray-900">Türkçe</span>
+              <span class="font-medium text-gray-950">Türkçe</span>
               <span class="text-xs text-gray-500">Turkish</span>
             </div>
             <div class="ml-auto">
@@ -308,7 +308,7 @@
               </svg>
             </div>
             <div class="flex flex-col">
-              <span class="font-medium text-gray-900">English</span>
+              <span class="font-medium text-gray-950">English</span>
               <span class="text-xs text-gray-500">İngilizce</span>
             </div>
             <div class="ml-auto">
@@ -341,14 +341,26 @@
             <div
               class="mr-3 flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 p-2 text-gray-600 transition-all duration-200 group-hover:bg-primary-100 group-hover:text-primary-600"
             >
-              <img
-                src="https://marketing.mbdtravel.ae/assets/flags/ar.svg"
-                alt="العربية"
-                class="h-6 w-6 rounded-sm"
-              />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="28"
+                height="20"
+                viewBox="0 0 28 20"
+                fill="none"
+              >
+                <rect width="28" height="6.66667" fill="#000000" />
+                <rect y="6.66667" width="28" height="6.66667" fill="#FFFFFF" />
+                <rect y="13.3333" width="28" height="6.66667" fill="#007A3D" />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M0 0h8v20H0V0z"
+                  fill="#CE1126"
+                />
+              </svg>
             </div>
             <div class="flex flex-col">
-              <span class="font-medium text-gray-900">العربية</span>
+              <span class="font-medium text-gray-950">العربية</span>
               <span class="text-xs text-gray-500">Arapça</span>
             </div>
             <div class="ml-auto">
@@ -615,11 +627,7 @@
           class="relative z-10 mx-auto flex h-full translate-y-[16px] flex-col items-center justify-center px-1 md:min-h-[320px] md:translate-y-[-28px] md:px-0 lg:translate-y-[-16px]"
         >
           <h1
-            style="
-              font-size: clamp(1.5rem, 0.8333rem + 3.3333vw, 3.5rem);
-              line-height: clamp(1.7rem, 1.0167rem + 3.4167vw, 3.75rem);
-            "
-            class="max-w-[840px] px-4 font-bold tracking-tight text-gray-900 md:px-8"
+            class="max-w-[840px] px-4 text-3xl font-bold tracking-tight text-primary-950 sm:text-[clamp(1.5rem,_0.8333rem_+_3.3333vw,_3.5rem)] sm:leading-[clamp(1.7rem,_1.0167rem_+_3.4167vw,_3.75rem)] md:px-8"
           >
             Seyahat içeriklerinizi gelire çevirmenin en iyi yolu, MBD Travel
             Influencer Programı!
@@ -646,16 +654,25 @@
             class="relative w-full overflow-hidden after:absolute after:inset-0 after:z-20 after:bg-gradient-to-r after:from-transparent after:to-gray-950/20 md:after:to-gray-950/80"
           >
             <!-- Banner background image -->
-            <div class="w-full">
+            <div class="w-full md:min-h-[720px] lg:min-h-[560px]">
               <picture>
                 <source
-                  srcset="/assets/images/banner-d.jpeg"
+                  media="(max-width: 767px)"
+                  data-srcset="/assets/images/banner-m.jpg"
+                  srcset="/assets/images/banner-m.jpg"
+                />
+                <source
                   media="(min-width: 768px)"
+                  data-srcset="/assets/images/banner-d.jpeg"
+                  srcset="/assets/images/banner-d.jpeg"
                 />
                 <img
-                  src="/assets/images/banner-m.jpg"
-                  alt="Travel experiences - person in a canyon"
-                  class="h-auto min-h-[540px] w-full object-cover"
+                  data-src="/assets/images/gray-placeholder.webp"
+                  src="/assets/images/gray-placeholder.webp"
+                  loading="lazy"
+                  alt="MBD Partner Program"
+                  class="lazy-picture h-full w-full object-cover sm:max-h-[680px] md:min-h-[720px] lg:min-h-[560px]"
+                  style="transition: filter 0.3s; filter: none"
                 />
               </picture>
             </div>
@@ -674,7 +691,7 @@
                 >
                   <!-- Başlık -->
                   <h2
-                    class="mb-4 text-3xl font-bold text-primary-900 md:mb-6 md:text-4xl md:text-white"
+                    class="mb-4 text-3xl font-bold text-primary-950 md:mb-6 md:text-4xl md:text-white"
                   >
                     Lider kurumla seyahat deneyimleriniz için Partner Olun!
                   </h2>
@@ -751,7 +768,7 @@
         <div class="mx-auto max-w-6xl px-6 sm:px-6 lg:px-8">
           <!-- Heading -->
           <h2
-            class="mb-8 text-start text-3xl font-bold text-gray-900 md:text-4xl"
+            class="mb-8 text-start text-3xl font-bold text-gray-950 md:text-4xl"
           >
             İnteraktif kanallarınızı kullanarak gelir elde etmeye başlayın!
           </h2>
@@ -782,7 +799,7 @@
                     <circle cx="12" cy="12" r="2" />
                     <path d="M6 12h.01M18 12h.01" />
                   </svg>
-                  <p class="text-center font-semibold text-gray-900">
+                  <p class="text-center font-semibold text-gray-950">
                     Takipçileriniz indirim kazanırken siz de dolar bazında
                     getiri elde edin! Hem takipçileriniz, hem de siz kazanın!
                   </p>
@@ -810,7 +827,7 @@
                       d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"
                     />
                   </svg>
-                  <p class="text-center font-semibold text-gray-900">
+                  <p class="text-center font-semibold text-gray-950">
                     Gelirlerinizi anlık olarak analiz araçlarımızla takip edin,
                     içeriklerinize uygun olan kampanyaları hesabınıza
                     tanımlayın!
@@ -840,7 +857,7 @@
                     />
                   </svg>
 
-                  <p class="text-center font-semibold text-gray-900">
+                  <p class="text-center font-semibold text-gray-950">
                     Size özel destek ekibimize ve en güncel içerik ilham
                     kaynaklarına erişim sağlayın.
                   </p>
@@ -866,7 +883,7 @@
         <div class="mx-auto max-w-6xl px-6 sm:px-6 lg:px-8">
           <!-- Heading -->
           <h2
-            class="mb-8 text-start text-3xl font-bold text-gray-900 md:text-4xl"
+            class="mb-8 text-start text-3xl font-bold text-gray-950 md:text-4xl"
           >
             Nasıl Çalışıyor?
           </h2>
@@ -896,7 +913,7 @@
                   </svg>
 
                   <div class="text-center">
-                    <h3 class="text-xl font-bold uppercase text-gray-900">
+                    <h3 class="text-xl font-bold uppercase text-gray-950">
                       Influencer Program'ımıza Kayıt Talebi İletin
                     </h3>
                   </div>
@@ -925,7 +942,7 @@
                   </div>
 
                   <div class="text-center">
-                    <h3 class="text-xl font-bold uppercase text-gray-900">
+                    <h3 class="text-xl font-bold uppercase text-gray-950">
                       Kampanyaları Hesabınıza Tanımlayıp İçeriklerinizi Üretmeye
                       Başlayın
                     </h3>
@@ -959,7 +976,7 @@
                   </svg>
 
                   <div class="text-center">
-                    <h3 class="text-xl font-bold uppercase text-gray-900">
+                    <h3 class="text-xl font-bold uppercase text-gray-950">
                       MBD Travel Influencer Program üyelerinin ayrıcalıklarından
                       yararlanın!
                     </h3>
@@ -974,7 +991,7 @@
             <!-- Become a partner -->
             <div class="flex h-full flex-col justify-between">
               <div>
-                <h2 class="mb-4 text-2xl font-bold text-gray-900 md:text-3xl">
+                <h2 class="mb-4 text-2xl font-bold text-gray-950 md:text-3xl">
                   Şimdi Partner Olun!
                 </h2>
                 <p class="text-sm font-medium text-gray-700 md:text-base">
@@ -996,7 +1013,7 @@
             <!-- Need help? -->
             <div class="flex h-full flex-col justify-between">
               <div>
-                <h2 class="mb-4 text-2xl font-bold text-gray-900 md:text-3xl">
+                <h2 class="mb-4 text-2xl font-bold text-gray-950 md:text-3xl">
                   Yardım Lazım Mı?
                 </h2>
                 <p class="text-sm font-medium text-gray-700 md:text-base">
