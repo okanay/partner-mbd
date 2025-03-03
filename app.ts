@@ -65,6 +65,11 @@ app.get('/login', c => {
   return c.html(html.text())
 })
 
+app.get('/reset-password', c => {
+  const html = Bun.file('./dist/reset-password/index.html')
+  return c.html(html.text())
+})
+
 const secret = 'LHOUwjBFGyori4tltMnRQ2YtanvObPZOenCowk/Cq8c='
 
 app.post('/github-push-event', async c => {
