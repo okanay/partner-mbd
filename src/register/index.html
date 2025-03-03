@@ -147,7 +147,7 @@
               class="group/focus relative flex flex-col gap-2"
               data-focus="false"
             >
-              <label for="password" class="text-xs text-gray-800"
+              <label for="phone-input" class="text-xs text-gray-800"
                 >Telefon Numarası</label
               >
               <!-- Mevcut Telefon Input Yapısı -->
@@ -272,31 +272,34 @@
             </div>
 
             <!-- Şifre -->
+            <!-- Şifre -->
             <div
               class="group relative flex flex-col gap-2"
               data-visible="false"
             >
               <label for="password" class="text-xs text-gray-800">Şifre</label>
-              <input
-                type="password"
-                style="-webkit-border-radius: 0; border-radius: 0"
-                id="password"
-                class="h-12 w-full !rounded border border-gray-200 px-3 py-2 outline-none focus:border-primary-300"
-                placeholder="Şifrenizi Girin"
-              />
-              <button
-                type="button"
-                class="visible-control-btn absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700 rtl:left-3 rtl:right-auto"
-              >
-                <!-- Kapalı göz ikonu -->
-                <span class="group-data-[visible=true]:hidden">
-                  <i data-lucide="eye" class="size-4"></i>
-                </span>
-                <!-- Açık göz ikonu -->
-                <span class="hidden group-data-[visible=true]:block">
-                  <i data-lucide="eye-off" class="size-4"></i>
-                </span>
-              </button>
+              <div class="relative">
+                <input
+                  type="password"
+                  style="-webkit-border-radius: 0; border-radius: 0"
+                  id="password"
+                  class="h-12 w-full !rounded border border-gray-200 px-3 py-2 outline-none focus:border-primary-300"
+                  placeholder="Şifrenizi Girin"
+                />
+                <button
+                  type="button"
+                  class="visible-control-btn absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700 rtl:left-3 rtl:right-auto"
+                >
+                  <!-- Kapalı göz ikonu -->
+                  <span class="group-data-[visible=true]:hidden">
+                    <i data-lucide="eye" class="size-4"></i>
+                  </span>
+                  <!-- Açık göz ikonu -->
+                  <span class="hidden group-data-[visible=true]:block">
+                    <i data-lucide="eye-off" class="size-4"></i>
+                  </span>
+                </button>
+              </div>
             </div>
 
             <!--  Sifre Bilgilendirme -->

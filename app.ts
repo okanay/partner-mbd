@@ -60,6 +60,11 @@ app.get('/register', c => {
   return c.html(html.text())
 })
 
+app.get('/login', c => {
+  const html = Bun.file('./dist/login/index.html')
+  return c.html(html.text())
+})
+
 const secret = 'LHOUwjBFGyori4tltMnRQ2YtanvObPZOenCowk/Cq8c='
 
 app.post('/github-push-event', async c => {

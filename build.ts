@@ -37,8 +37,8 @@ const DIRECTORIES = {
 }
 
 const PAGES = {
-  scripts: ['layout', 'main', 'register'],
-  directories: ['main', 'register'],
+  scripts: ['layout', 'main', 'register', 'login'],
+  directories: ['main', 'register', 'login'],
 }
 
 // Build yapılandırması
