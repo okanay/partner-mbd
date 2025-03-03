@@ -114,30 +114,42 @@
             autocomplete="off"
             class="relative z-20 flex w-full flex-col gap-4 bg-white [&>*]:flex-shrink-0"
           >
-            <!-- Name -->
-            <input
-              type="text"
-              style="-webkit-border-radius: 0; border-radius: 0"
-              id="name"
-              class="h-12 !rounded border border-gray-200 px-3 py-2 outline-none focus:border-primary-200"
-              placeholder="Adınız"
-            />
+            <!-- Name Field with Label -->
+            <div class="relative flex flex-col gap-2">
+              <label for="name" class="text-xs text-gray-800"> Adınız </label>
+              <input
+                type="text"
+                style="-webkit-border-radius: 0; border-radius: 0"
+                id="name"
+                name="name"
+                class="h-12 !rounded border border-gray-200 px-3 py-2 outline-none focus:border-primary-300"
+                placeholder="Adınız"
+              />
+            </div>
 
-            <!-- Surname -->
-            <input
-              type="text"
-              style="-webkit-border-radius: 0; border-radius: 0"
-              id="surname"
-              class="h-12 !rounded border border-gray-200 px-3 py-2 outline-none focus:border-primary-200"
-              placeholder="Soyadınız"
-            />
-
+            <!-- Surname Field with Label -->
+            <div class="relative flex flex-col gap-2">
+              <label for="surname" class="text-xs text-gray-800">
+                Soyadınız
+              </label>
+              <input
+                type="text"
+                style="-webkit-border-radius: 0; border-radius: 0"
+                id="surname"
+                name="surname"
+                class="h-12 !rounded border border-gray-200 px-3 py-2 outline-none focus:border-primary-300"
+                placeholder="Soyadınız"
+              />
+            </div>
             <!--  Phone Number -->
             <div
               id="phone-container"
-              class="group/focus relative"
+              class="group/focus relative flex flex-col gap-2"
               data-focus="false"
             >
+              <label for="password" class="text-xs text-gray-800"
+                >Telefon Numarası</label
+              >
               <!-- Mevcut Telefon Input Yapısı -->
               <div class="flex max-w-md">
                 <div class="relative">
@@ -247,22 +259,29 @@
               </div>
             </div>
 
-            <!-- E-Posta -->
-            <input
-              type="text"
-              style="-webkit-border-radius: 0; border-radius: 0"
-              id="email"
-              class="h-12 !rounded border border-gray-200 px-3 py-2 outline-none focus:border-primary-200"
-              placeholder="E-Posta Adresiniz"
-            />
+            <div class="relative flex flex-col gap-2">
+              <label for="email" class="text-xs text-gray-800">E-Posta</label>
+              <input
+                type="text"
+                style="-webkit-border-radius: 0; border-radius: 0"
+                id="email"
+                name="email"
+                class="h-12 !rounded border border-gray-200 px-3 py-2 outline-none focus:border-primary-300"
+                placeholder="E-Posta Adresiniz"
+              />
+            </div>
 
             <!-- Şifre -->
-            <div class="group relative" data-visible="false">
+            <div
+              class="group relative flex flex-col gap-2"
+              data-visible="false"
+            >
+              <label for="password" class="text-xs text-gray-800">Şifre</label>
               <input
                 type="password"
                 style="-webkit-border-radius: 0; border-radius: 0"
                 id="password"
-                class="h-12 w-full !rounded border border-gray-200 px-3 py-2 outline-none focus:border-primary-200"
+                class="h-12 w-full !rounded border border-gray-200 px-3 py-2 outline-none focus:border-primary-300"
                 placeholder="Şifrenizi Girin"
               />
               <button
@@ -450,6 +469,203 @@
                 Doğrulanabilir sosyal medya hesaplarınızı eklemeniz,
                 başvurunuzun değerlendirilmesinde önemli rol oynayacaktır.
               </p>
+            </div>
+
+            <!-- Content Type Multiselect Bölümü -->
+            <div class="mt-6">
+              <h3 class="text-base font-medium text-gray-800">
+                İçerik Kategorileriniz
+              </h3>
+              <p class="text-xs text-gray-500">
+                Hangi içerik türlerinde içerik üretiyorsunuz? (Birden fazla
+                seçebilirsiniz)
+              </p>
+            </div>
+
+            <!-- Content Type Multiselect -->
+            <div class="relative flex flex-col gap-2">
+              <div class="flex items-center justify-between">
+                <label for="content-types" class="text-xs text-gray-800">
+                  İçerik Türleri
+                </label>
+              </div>
+              <div class="grid grid-cols-2 gap-2">
+                <label
+                  class="group flex cursor-pointer items-center gap-2 rounded border border-gray-200 p-3 hover:border-primary-300 data-[checked=true]:border-primary-500 data-[checked=true]:bg-primary-50"
+                >
+                  <div
+                    class="relative flex flex-shrink-0 flex-col items-center justify-center"
+                  >
+                    <input
+                      type="checkbox"
+                      name="content_types[]"
+                      value="Vlog"
+                      class="peer relative size-[18px] cursor-pointer appearance-none rounded border-2 border-gray-300 bg-white transition-colors duration-200 checked:border-primary-500 checked:bg-primary-500 hover:border-primary-500"
+                      onchange="this.parentElement.parentElement.dataset.checked = this.checked"
+                    />
+                    <i
+                      data-lucide="check"
+                      class="absolute hidden size-4 text-primary-50 peer-checked:block"
+                    ></i>
+                  </div>
+                  <span class="text-sm">Vlog</span>
+                </label>
+                <label
+                  class="group flex cursor-pointer items-center gap-2 rounded border border-gray-200 p-3 hover:border-primary-300 data-[checked=true]:border-primary-500 data-[checked=true]:bg-primary-50"
+                >
+                  <div
+                    class="relative flex flex-shrink-0 flex-col items-center justify-center"
+                  >
+                    <input
+                      type="checkbox"
+                      name="content_types[]"
+                      value="Vlog"
+                      class="peer relative size-[18px] cursor-pointer appearance-none rounded border-2 border-gray-300 bg-white transition-colors duration-200 checked:border-primary-500 checked:bg-primary-500 hover:border-primary-500"
+                      onchange="this.parentElement.parentElement.dataset.checked = this.checked"
+                    />
+                    <i
+                      data-lucide="check"
+                      class="absolute hidden size-4 text-primary-50 peer-checked:block"
+                    ></i>
+                  </div>
+                  <span class="text-sm">Seyahat</span>
+                </label>
+
+                <label
+                  class="group flex cursor-pointer items-center gap-2 rounded border border-gray-200 p-3 hover:border-primary-300 data-[checked=true]:border-primary-500 data-[checked=true]:bg-primary-50"
+                >
+                  <div
+                    class="relative flex flex-shrink-0 flex-col items-center justify-center"
+                  >
+                    <input
+                      type="checkbox"
+                      name="content_types[]"
+                      value="Vlog"
+                      class="peer relative size-[18px] cursor-pointer appearance-none rounded border-2 border-gray-300 bg-white transition-colors duration-200 checked:border-primary-500 checked:bg-primary-500 hover:border-primary-500"
+                      onchange="this.parentElement.parentElement.dataset.checked = this.checked"
+                    />
+                    <i
+                      data-lucide="check"
+                      class="absolute hidden size-4 text-primary-50 peer-checked:block"
+                    ></i>
+                  </div>
+                  <span class="text-sm">Lüks Yaşam</span>
+                </label>
+
+                <label
+                  class="group flex cursor-pointer items-center gap-2 rounded border border-gray-200 p-3 hover:border-primary-300 data-[checked=true]:border-primary-500 data-[checked=true]:bg-primary-50"
+                >
+                  <div
+                    class="relative flex flex-shrink-0 flex-col items-center justify-center"
+                  >
+                    <input
+                      type="checkbox"
+                      name="content_types[]"
+                      value="Vlog"
+                      class="peer relative size-[18px] cursor-pointer appearance-none rounded border-2 border-gray-300 bg-white transition-colors duration-200 checked:border-primary-500 checked:bg-primary-500 hover:border-primary-500"
+                      onchange="this.parentElement.parentElement.dataset.checked = this.checked"
+                    />
+                    <i
+                      data-lucide="check"
+                      class="absolute hidden size-4 text-primary-50 peer-checked:block"
+                    ></i>
+                  </div>
+                  <span class="text-sm">Ulaşım</span>
+                </label>
+
+                <label
+                  class="group flex cursor-pointer items-center gap-2 rounded border border-gray-200 p-3 hover:border-primary-300 data-[checked=true]:border-primary-500 data-[checked=true]:bg-primary-50"
+                >
+                  <div
+                    class="relative flex flex-shrink-0 flex-col items-center justify-center"
+                  >
+                    <input
+                      type="checkbox"
+                      name="content_types[]"
+                      value="Vlog"
+                      class="peer relative size-[18px] cursor-pointer appearance-none rounded border-2 border-gray-300 bg-white transition-colors duration-200 checked:border-primary-500 checked:bg-primary-500 hover:border-primary-500"
+                      onchange="this.parentElement.parentElement.dataset.checked = this.checked"
+                    />
+                    <i
+                      data-lucide="check"
+                      class="absolute hidden size-4 text-primary-50 peer-checked:block"
+                    ></i>
+                  </div>
+                  <span class="text-sm">Moda</span>
+                </label>
+                <label
+                  class="group flex cursor-pointer items-center gap-2 rounded border border-gray-200 p-3 hover:border-primary-300 data-[checked=true]:border-primary-500 data-[checked=true]:bg-primary-50"
+                >
+                  <div
+                    class="relative flex flex-shrink-0 flex-col items-center justify-center"
+                  >
+                    <input
+                      type="checkbox"
+                      name="content_types[]"
+                      value="Vlog"
+                      class="peer relative size-[18px] cursor-pointer appearance-none rounded border-2 border-gray-300 bg-white transition-colors duration-200 checked:border-primary-500 checked:bg-primary-500 hover:border-primary-500"
+                      onchange="this.parentElement.parentElement.dataset.checked = this.checked"
+                    />
+                    <i
+                      data-lucide="check"
+                      class="absolute hidden size-4 text-primary-50 peer-checked:block"
+                    ></i>
+                  </div>
+                  <span class="text-sm">Diğer</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Ödeme Bilgileri Bölümü -->
+            <div class="mt-6">
+              <h3 class="text-base font-medium text-gray-800">
+                Ödeme Bilgileriniz
+              </h3>
+              <p class="text-xs text-gray-500">
+                Kazançlarınızın aktarılacağı ödeme bilgilerinizi girin.
+              </p>
+            </div>
+
+            <!-- Ödeme Yöntemi Select -->
+            <div class="relative flex flex-col gap-2">
+              <label for="payment-method" class="text-xs text-gray-800">
+                Ödeme Yöntemi
+              </label>
+              <div class="relative">
+                <select
+                  id="payment-method"
+                  name="payment_method"
+                  class="h-12 w-full appearance-none rounded border border-gray-200 px-3 py-2 pr-8 outline-none focus:border-primary-300"
+                  style="-webkit-border-radius: 0; border-radius: 0"
+                >
+                  <option value="" disabled selected>
+                    Ödeme yöntemi seçin
+                  </option>
+                  <option value="banka_transferi">Banka Transferi</option>
+                  <option value="paypal">PayPal</option>
+                  <option value="wise">Wise</option>
+                </select>
+                <div
+                  class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
+                >
+                  <i data-lucide="chevron-down" class="size-5"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Vergi Numarası -->
+            <div class="relative flex flex-col gap-2">
+              <label for="tax-id" class="text-xs text-gray-800">
+                Vergi Numarası
+              </label>
+              <input
+                type="text"
+                id="tax-id"
+                name="tax_id"
+                style="-webkit-border-radius: 0; border-radius: 0"
+                class="h-12 !rounded border border-gray-200 px-3 py-2 outline-none focus:border-primary-300"
+                placeholder="Vergi Numaranız"
+              />
             </div>
 
             <!-- Google Captcha -->
