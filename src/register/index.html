@@ -758,6 +758,7 @@
             <!-- Submit Button -->
             <button
               type="submit"
+              disabled
               class="group h-[52px] w-full !rounded border border-primary-200 bg-primary-500 px-4 py-2 font-semibold text-white transition-colors duration-300 hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-75"
             >
               <span class="block group-disabled:hidden"> Üyeliği Başlat </span>
@@ -766,11 +767,10 @@
                 class="hidden items-center justify-center gap-2 group-disabled:flex"
               >
                 <span> İşlem Devam Ediyor </span>
-                <img
-                  src="/assets/images/icons/loading-spinner.svg"
-                  alt="Loading"
+                <i
+                  data-lucide="loader-circle"
                   class="size-6 animate-spin brightness-0 invert !duration-[2500ms]"
-                />
+                ></i>
               </span>
             </button>
 
