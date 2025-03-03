@@ -591,56 +591,28 @@
     <main class="">
       <!-- Hero Section -->
       <section
-        class="relative mx-auto flex w-full max-w-7xl flex-col overflow-hidden pt-20 md:min-h-[320px] md:flex-row md:justify-between md:gap-8 md:px-8 lg:pt-0"
+        class="relative mx-auto flex w-full max-w-7xl flex-col overflow-hidden px-2 pt-20 md:min-h-[320px] md:flex-row md:justify-between md:gap-8 md:px-8 lg:pt-0"
       >
-        <!-- Mavi şekil (sol) -->
-        <div
-          class="hidden min-h-[320px] flex-col items-start justify-start md:flex"
-        >
-          <div class="h-auto w-[155px] min-w-[80px] translate-y-[-28px]">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="120"
-              height="137"
-              viewBox="0 0 120 137"
-              fill="none"
-            >
-              <path
-                d="M108.335 117.314C54.2587 148.11 -30.9013 86.4394 29.4172 11.9693"
-                stroke="rgb(var(--primary-500))"
-                stroke-width="22"
-                stroke-miterlimit="10"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-dasharray="0.01 38.5"
-              />
-            </svg>
-          </div>
+        <!-- Şekil (sol) -->
+        <div class="absolute left-8 top-0 hidden pt-20 md:block lg:pt-0">
+          <img
+            src="/assets/images/shapes/1.svg"
+            class="size-full"
+            style="width: clamp(12.5rem, 4.25rem + 17.1875vw, 18rem)"
+            alt="shape"
+          />
         </div>
 
-        <!-- Sari Şekil (Top) -->
-        <div class="h-[100px] w-full md:hidden">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="100%"
-            height="88"
-            viewBox="0 0 320 88"
-            fill="none"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M-9.26397 35.7434C91.236 -2.75655 104.736 83.7435 182.236 42.2435C259.736 0.743459 296.496 34.3158 301.164 59.5512C305.506 83.0299 267.575 89.4039 266.535 60.5299C265.721 37.9394 294.394 -12.5977 350.565 17.5729C390.736 39.1495 398.236 59.5512 425.981 57.0729"
-              stroke="#facc15"
-              stroke-width="16"
-              stroke-miterlimit="6.78131"
-              stroke-linecap="square"
-            />
-          </svg>
-        </div>
+        <!-- Şekil Mobil Üst -->
+        <img
+          src="/assets/images/shapes/3.svg"
+          class="h-auto max-h-[100px] w-[100%] object-cover md:hidden"
+          alt="shape"
+        />
 
         <!-- İçerik -->
         <div
-          class="relative z-10 mx-auto flex h-full translate-y-[-20px] flex-col items-center justify-center md:min-h-[320px]"
+          class="relative z-10 mx-auto flex h-full translate-y-[-8px] flex-col items-center justify-center md:min-h-[320px]"
         >
           <h1
             style="
@@ -654,25 +626,15 @@
           </h1>
         </div>
 
-        <!-- Sari Şekil (sağ) -->
-        <div
-          class="hidden min-h-[320px] flex-shrink-0 flex-col items-end justify-end md:flex"
-        >
-          <div class="h-auto w-full max-w-[264px] translate-y-[20px]">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="278"
-              height="289"
-              viewBox="0 0 278 289"
-              fill="none"
-            >
-              <path
-                d="M5 37.2945C54 -0.705502 109.062 2.35639 130 23.2944C170 63.2944 131 141.294 93 166.294C55 191.294 15 150.294 70 115.294C125 80.2945 214 75.2944 253 124.294C292 173.294 253 243.294 208 282.294"
-                stroke="#facc15"
-                stroke-width="16"
-              />
-            </svg>
-          </div>
+        <!-- Şekil Sağ -->
+        <div class="absolute bottom-0 right-8 hidden h-auto md:block">
+          <img
+            src="/assets/images/shapes/2.svg"
+            class=""
+            class="size-full"
+            style="width: clamp(18.75rem, 13.125rem + 11.7188vw, 22.5rem)"
+            alt="shape"
+          />
         </div>
       </section>
 
@@ -681,19 +643,17 @@
         <div class="">
           <!-- Banner container -->
           <div
-            class="relative w-full overflow-hidden after:absolute after:inset-0 after:z-20 after:bg-gradient-to-r after:from-gray-950/40 after:to-gray-950/40"
+            class="relative w-full overflow-hidden after:absolute after:inset-0 after:z-20 after:bg-gradient-to-r after:from-transparent after:to-gray-950/20 md:after:to-gray-950/80"
           >
             <!-- Banner background image -->
             <div class="w-full">
               <picture>
                 <source
-                  srcset="
-                    https://cdn.getyourguide.com/pp/assets/static/landing/image-banner-desktop.png
-                  "
+                  srcset="/assets/images/banner-d.jpeg"
                   media="(min-width: 768px)"
                 />
                 <img
-                  src="https://cdn.getyourguide.com/pp/assets/static/landing/image-banner-mobile-2.jpeg"
+                  src="/assets/images/banner-m.jpg"
                   alt="Travel experiences - person in a canyon"
                   class="h-auto min-h-[540px] w-full object-cover"
                 />
@@ -709,22 +669,24 @@
                 <div class="w-full md:w-1/2"></div>
 
                 <!-- Sağ taraftaki içerik bölümü -->
-                <div class="w-full px-6 md:w-1/2 md:px-12 md:py-0">
+                <div
+                  class="w-full px-6 text-primary-950 md:w-1/2 md:px-12 md:py-0 md:text-gray-200"
+                >
                   <!-- Başlık -->
                   <h2
-                    class="mb-4 text-3xl font-bold text-white md:mb-6 md:text-4xl"
+                    class="mb-4 text-3xl font-bold text-primary-900 md:mb-6 md:text-4xl md:text-white"
                   >
                     Lider kurumla seyahat deneyimleriniz için Partner Olun!
                   </h2>
 
                   <!-- Alt metin 1 -->
-                  <p class="text-base font-medium text-gray-200 md:mb-6">
+                  <p class="text-base font-medium md:mb-6">
                     Sosyal medya hesaplarınızda, websitenizde, yada ikisindede
                     iş birliği yapabileceğimiz muhteşem bir program tasarladık.
                   </p>
 
                   <!-- Alt metin 2 -->
-                  <p class="mb-8 text-base font-medium text-gray-200">
+                  <p class="mb-8 text-base font-medium">
                     Yapacağınız aktivitelerde yada ürettiğiniz içeriklerde size
                     özel promosyon kodlarıyla komisyon kazanabileceğiniz, bu
                     sayede takipçilerinize doğrudan fayda sağlayabileceğiniz,
@@ -750,7 +712,7 @@
       <section
         class="relative w-full overflow-hidden bg-primary-950 py-12 md:py-16"
       >
-        <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="relative z-10 mx-auto max-w-7xl px-6 sm:px-6 lg:px-8">
           <!-- Content container -->
           <div class="flex w-full flex-col items-center text-start">
             <!-- Text content -->
@@ -786,7 +748,7 @@
 
       <!-- Website Monetization Section -->
       <section id="benefits" class="w-full bg-primary-50 py-12 md:py-16">
-        <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-6xl px-6 sm:px-6 lg:px-8">
           <!-- Heading -->
           <h2
             class="mb-8 text-start text-3xl font-bold text-gray-900 md:text-4xl"
@@ -901,7 +863,7 @@
 
       <!-- How it works Section -->
       <section id="how-it-works" class="w-full py-12 md:py-16">
-        <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-6xl px-6 sm:px-6 lg:px-8">
           <!-- Heading -->
           <h2
             class="mb-8 text-start text-3xl font-bold text-gray-900 md:text-4xl"
@@ -1058,7 +1020,7 @@
     </main>
 
     <footer class="border-t border-gray-200 bg-white">
-      <div class="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-6xl px-6 py-8 sm:px-6 lg:px-8">
         <!-- Üst Kısım: Logo ve Menüler -->
         <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           <!-- Logo ve Açıklama -->
